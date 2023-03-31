@@ -1,10 +1,35 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="common-layout">
+    <el-container>
+      <el-header>
+        <el-page-header @back="goBack">
+          <template #content>
+            <span class="text-large font-600 mr-3"> Title </span>
+          </template>
+        </el-page-header>
+      </el-header>
+      <el-main>
+        <nav>
+          <router-link to="/">Home</router-link> |
+          <router-link to="/about">About</router-link>
+        </nav>
+      </el-main>
+      <router-view />
+      <el-footer>
+        <a href="https://beian.miit.gov.cn/" target="_blank">陕ICP备2023003389</a>
+      </el-footer>
+    </el-container>
+  </div>
 </template>
+
+
+
+<script lang="ts" setup>
+const goBack = () => {
+  console.log("go back");
+};
+</script>
+
 
 <style>
 #app {
