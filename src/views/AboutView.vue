@@ -6,12 +6,12 @@
     class="demo-ruleForm"
     :rules="rules"
   >
-    <el-form-item label="第一空" prop="name">
+    <el-form-item label="第一空" prop="name" style="width: 70%">
       <!-- prop对应规则名 -->
-      <el-input v-model="ruleForm.name" ></el-input>
+      <el-input v-model="ruleForm.name"></el-input>
     </el-form-item>
-    <el-form-item label="第二空" prop="name1">
-      <el-input v-model="ruleForm.name1" ></el-input>
+    <el-form-item label="第二空" prop="name1" style="width: 70%">
+      <el-input v-model="ruleForm.name1"></el-input>
     </el-form-item>
   </el-form>
 </template>
@@ -44,17 +44,31 @@ export default {
         name: "",
         name1: "",
       },
-      rules: {//这个rules来自于表单元素<el-form>的rules属性的值
-        name: [//这个name来自于具体的表单域的prop属性的值
-          { required: true, message: "请输入活动名称", trigger: ["blur","change"] },
+      rules: {
+        //这个rules来自于表单元素<el-form>的rules属性的值
+        name: [
+          //这个name来自于具体的表单域的prop属性的值
+          {
+            required: true,
+            message: "请输入活动名称",
+            trigger: ["blur", "change"],
+          },
           // { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" },
-          { required: true, validator: validateCode,trigger:["blur","change"]  },
+          {
+            required: true,
+            validator: validateCode,
+            trigger: ["blur", "change"],
+          },
         ],
         name1: [
-          { required: true, message: "请输入活动名称1", trigger: ["blur","change"]  },
+          {
+            required: true,
+            message: "请输入活动名称1",
+            trigger: ["blur", "change"],
+          },
           // { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" },
           // { validator: rules,trigger:"blur" }
-          { validator: validateCode1,trigger:["blur","change"]  }
+          { validator: validateCode1, trigger: ["blur", "change"] },
         ],
       },
     };

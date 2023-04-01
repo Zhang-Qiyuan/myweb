@@ -3,6 +3,12 @@ module.exports = defineConfig({
   transpileDependencies: true
 })
 module.exports = {
+  pages: {
+    index: {
+      entry: 'src/main.js', // 入口文件
+      title: '乐观者的线上小屋'
+    }
+  },
   configureWebpack: {
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".json"],
